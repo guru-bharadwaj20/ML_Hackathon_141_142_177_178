@@ -1,0 +1,77 @@
+
+================================================================================================
+ 1. PREPROCESSING
+================================================================================================
+ student_test  trips=  9  GPS points=  16,657  candidate rows=   103,788  candidate miss rate=0.43%
+ train         trips= 80  GPS points= 208,417  candidate rows= 1,103,327  candidate miss rate=11.42%
+ Skipped: student_test 00000000 (skipped: missing .arcs/.route)
+ Steps: clean track -> metre projection -> candidates (R, K) -> labels by route alignment -> 11 features
+ Training rows: drop points > 50 m from route, cap 1,000 points per trip
+
+================================================================================================
+ 2. K VALUES
+================================================================================================
+ (a) Candidate K: how many nearby roads we keep per GPS point (grid on train trips)
+ K  miss_rate  cands_per_point
+ 2     0.1831           1.8201
+ 4     0.1367           3.2481
+ 6     0.1235           4.3387
+ 8     0.1191           5.2069
+10     0.1174           5.8953
+15     0.1160           7.0794
+     -> chosen R = 50 m, K = 8
+
+ (b) KNN k: number of neighbours = 25, distance-weighted (one setting, not tuned)
+
+ (c) Cross-validation folds: k = 5 (GroupKFold, grouped by trip)
+
+================================================================================================
+ 3. FEATURE SELECTION  (RF entropy importance + backward elimination, scored by CV macro F1)
+================================================================================================
+ Importance ranking:
+   heading_diff    0.301  ##############################
+   dist_minus_min  0.233  #######################
+   rank            0.132  #############
+   nbr_dist        0.088  #########
+   tproj           0.071  #######
+   speed           0.060  ######
+   dist            0.051  #####
+   arc_len         0.038  ####
+   has_reverse     0.015  ##
+   n_cand          0.010  #
+   fallback        0.000  
+
+ Backward elimination:
+ n_features dropped_next  cv_macro_f1  cv_std
+         11     fallback       0.9280  0.0087
+         10       n_cand       0.9280  0.0087
+          9  has_reverse       0.9290  0.0087
+          8      arc_len       0.9263  0.0100
+          7         dist       0.9249  0.0106
+          6        speed       0.9242  0.0106
+          5        tproj       0.9230  0.0109
+          4     nbr_dist       0.9137  0.0109
+          3         rank       0.9062  0.0117
+
+ -> kept 9 features: heading_diff, dist_minus_min, rank, nbr_dist, tproj, speed, dist, arc_len, has_reverse
+ -> dropped: n_cand, fallback
+
+================================================================================================
+ 4. ALL MODELS  (CV on 80 train trips, test on 9 student-test trips)
+================================================================================================
+               Model  CV F1  Train F1  Test F1  Test Acc   Prec  Recall  Top-1  LogLoss  Continuity  Train s  Infer s
+  LogisticRegression 0.9005    0.9017   0.8934    0.9427 0.8208  0.8211 0.8457   0.1602      0.9101   0.1802   0.0064
+          GaussianNB 0.8501    0.8507   0.8401    0.9013 0.6381  0.8837 0.8382   0.3861      0.9040   0.0462   0.0176
+                 KNN 0.9192    1.0000   0.9119    0.9536 0.8721  0.8314 0.8553   0.1534      0.9183   0.4522   9.7901
+        DecisionTree 0.9250    0.9333   0.9138    0.9541 0.8654  0.8443 0.8631   0.1219      0.9214   1.6391   0.0067
+        RandomForest 0.9285    0.9644   0.9163    0.9559 0.8789  0.8394 0.8659   0.1076      0.9264   8.5733   0.1302
+HistGradientBoosting 0.9289    0.9411   0.9162    0.9553 0.8650  0.8532 0.8647   0.1067      0.9265   1.4122   0.0410
+                 MLP 0.9258    0.9323   0.9152    0.9548 0.8642  0.8505 0.8598   0.1087      0.9269  18.9679   0.0307
+
+================================================================================================
+ 5. FINAL CHOICE
+================================================================================================
+ HistGradientBoostingClassifier  (best CV macro F1 = 0.9289, lowest test log loss = 0.107)
+ Why: ties Random Forest on accuracy, but overfits less (train-CV gap 0.012 vs 0.036),
+      gives better probabilities for the HMM, is 0.56 MB vs 178 MB and predicts ~3x faster.
+
