@@ -1,8 +1,13 @@
 data/
-models/*.joblib
-!models/stage3_GradientBoosting.joblib
-!models/final_hgb.joblib
-logs/
+models/stage3_KNN.joblib
+models/stage3_RandomForest.joblib
+results/stage3/knn_k_sweep.csv
+results/plots/s3_knn_k_sweep.png
+demo/
+presentation/
+report/api_console_sample.txt
+report/PathSnap_Technical_Report.pdf
+report/figures/_crop_*
 __pycache__/
 *.pyc
 .DS_Store

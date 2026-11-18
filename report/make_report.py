@@ -16,9 +16,10 @@ from reportlab.platypus import (SimpleDocTemplate, Paragraph, Spacer, Table, Tab
 
 ROOT = Path(__file__).resolve().parents[1]
 RES, PLOTS, FIG = ROOT / "results", ROOT / "results" / "plots", ROOT / "report" / "figures"
-OUT = Path(sys.argv[1]) if len(sys.argv) > 1 else ROOT / "report" / "PathSnap_Technical_Report.pdf"
+OUT = Path(sys.argv[1]) if len(sys.argv) > 1 else ROOT / "Phase 2 Deliverables" / "PathSnap_Technical_Report.pdf"
 REPO = "https://github.com/guru-bharadwaj20/ML_Hackathon_141_142_177_178"
-TEAM = "Team members (name, SRN): ______________________________________________"
+TEAM = [["SRN", "Name"], ["PES1UG24CS141", "Debargho Banerji"], ["PES1UG24CS142", "Deekshith Gowda G"],
+        ["PES1UG24CS177", "Guru R Bharadwaj"], ["PES1UG24CS178", "Gyaan S Shetty"]]
 
 ss = getSampleStyleSheet()
 TITLE = ParagraphStyle("t", parent=ss["Title"], fontSize=22, leading=27, spaceAfter=10)
@@ -96,7 +97,6 @@ CVH = pd.read_csv(RES / "stage5" / "classifier_vs_hmm.csv")
 PT = pd.read_csv(RES / "stage5" / "per_trip_student_test.csv", dtype={"trip_id": str})
 FB = pd.read_csv(RES / "stage5" / "hmm_fixed_broken_student_test.csv", dtype={"trip": str})
 EV = pd.read_csv(RES / "stage6" / "evaluator_api_check.csv", dtype={"trip_id": str})
-CONSOLE = (ROOT / "report" / "api_console_sample.txt").read_text(encoding="utf-8")
 
 NAME = {"LogisticRegression": "Logistic Regression", "GaussianNB": "Gaussian Naive Bayes",
         "KNN": "Distance-weighted KNN", "DecisionTree": "Decision Tree", "RandomForest": "Random Forest",
@@ -130,7 +130,8 @@ TRAIN_B5 = BEST_B[BEST_B.b == HMMC["beta_m"]].iloc[0]
 story.append(Spacer(1, 2.2 * cm))
 story.append(Paragraph("PathSnap: map matching noisy GPS to road arcs", TITLE))
 p("Technical report. UE24CS352A Machine Learning hackathon, PES University, RR Campus.")
-p(TEAM)
+p("Team members:")
+table(TEAM, [4, 6])
 p(f"Repository: <link href='{REPO}' color='blue'>{REPO}</link> (main branch)")
 story.append(Spacer(1, 0.5 * cm))
 p("PathSnap takes a trip of noisy GPS points and the road network around it and says which road arc each point "
@@ -647,8 +648,8 @@ p("src/maps.py builds every map and scripts/s6_maps.py writes one interactive ma
   "maps/student_test_&lt;trip&gt;.html (all committed). Each map has separate layers for the GPS observations (blue "
   "dots), the road network near the track (grey), the reference route (green), the classifier-only prediction "
   "(orange) and the classifier plus HMM prediction (red), with a layer control, a legend, a title with the trip's "
-  "Top-1 values, start and end markers and a scale bar. The view is fitted to the trip's GPS extent. The screenshots "
-  "below were taken from those files with an OpenStreetMap base layer added for readability.")
+  "Top-1 values, start and end markers and a scale bar. The view is fitted to the trip's GPS extent. The base layer "
+  "is OpenStreetMap, and the screenshots below were taken from those files.")
 img(FIG / "map_student_test_00000076.png", 16.5, "Figure 6.1. Student-test trip 00000076, full trip. The "
     "predicted route follows the reference route from start to end.")
 img(FIG / "map_student_test_00000076_zoom.png", 16.5, "Figure 6.2. The same trip zoomed to the stretch where the HMM "
@@ -674,11 +675,11 @@ p("The /predict response carries the GPS points, the predicted and classifier-on
   "for both laptops are in the README.")
 img(FIG / "ui_trip_00000087.png", 16, "Figure 7.1. The Streamlit UI after running evaluator trip 00000087: the ten "
     "trip options, metric tiles computed on the API server and the returned route on a Folium map.", crop_h=1150)
-story.append(Paragraph("API console on the laptop receiving the requests (start-up, one /trips call and one "
-                       "/predict call):", B))
-story.append(Spacer(1, 3))
-story.append(Preformatted(CONSOLE, MONO, maxLineLength=150))
-story.append(Spacer(1, 8))
+img(FIG / "api_console_laptop1.png", 16.5, "Figure 7.2. CMD window on laptop 1, the laptop receiving the "
+    "requests. Uvicorn listens on 0.0.0.0, and the requests arrive over the network address: /health, /trips and "
+    "/predict for evaluator trips 00000087 and 00000030. Each /predict call logs its point and candidate counts, the "
+    "time per stage, the chain breaks and the Top-1 accuracy computed on the server, then returns 200 OK.",
+    crop_h=470)
 p("Final system check on the 10 evaluator trips. We sent every evaluator trip through the running API once, with "
   "the model, features and beta already frozen. These numbers were not used for any choice.")
 table([["Trip", "Points", "Top-1 classifier", "Top-1 HMM", "Continuity classifier", "Continuity HMM",
@@ -711,7 +712,9 @@ story.append(Spacer(1, 6))
 p("Random seeds are fixed at 42. Every table above is read from results/ or configs/ by report/make_report.py, "
   "and every figure is either a plot written by the scripts or a screenshot of our own Folium maps and UI. The "
   "saved model (models/final_hgb.joblib), its configuration (configs/final_model.json, configs/hgb_tuned.json, "
-  "configs/hmm.json) and the full Optuna trial record are committed.")
+  "configs/hmm.json), the full Optuna trial record and the run logs in logs/ are committed. The other saved models "
+  "are committed except KNN (59 MB) and Random Forest (170 MB), which are over the repository size limits; "
+  "scripts/s3_models.py rebuilds them.")
 p("AI use. We used an AI coding assistant while writing code and drafting text for this report. All experiments "
   "were run on our own machines from the scripts in the repository, and every result reported here comes from "
   "those runs. Each team member can explain the code, the experiments and the choices described above.")

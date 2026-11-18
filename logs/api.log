@@ -1,0 +1,121 @@
+2026-11-18 12:42:16,890 | INFO | model loaded: 11 features, tuned (Optuna best) | features=11 | HMM beta=5.0 m | trips folder=C:\Users\Temp\Desktop\ML Hackathon\pathsnap\data\raw\student_test
+2026-11-18 12:42:17,064 | INFO | GET /trips -> 10 trips
+2026-11-18 12:42:17,089 | INFO | POST /predict trip=00000077 | started
+2026-11-18 12:42:17,351 | INFO | trip=00000077 | 3911 GPS points, 3911 with candidates, 27348 candidate rows | load 0.00s, features 0.03s, classifier 0.05s, HMM 0.17s | chain breaks=0
+2026-11-18 12:42:17,418 | INFO | trip=00000077 | Top-1 accuracy: HMM 0.7993, classifier-only 0.7566 | continuity 0.9923 | total 0.33s
+2026-11-18 12:42:17,528 | WARNING | POST /predict rejected unknown trip_id='../x'
+2026-11-18 12:42:17,553 | INFO | POST /predict trip=00000000 | started
+2026-11-18 12:42:40,168 | INFO | model loaded: 11 features, tuned (Optuna best) | features=11 | HMM beta=5.0 m | trips folder=C:\Users\Temp\Desktop\ML Hackathon\pathsnap\data\raw\evaluator_test
+2026-11-18 12:42:40,372 | INFO | GET /trips -> 10 trips
+2026-11-18 12:42:40,408 | INFO | GET /trips -> 10 trips
+2026-11-18 12:42:40,473 | INFO | POST /predict trip=00000015 | started
+2026-11-18 12:42:40,824 | INFO | trip=00000015 | 6854 GPS points, 6854 with candidates, 38835 candidate rows | load 0.02s, features 0.04s, classifier 0.06s, HMM 0.23s | chain breaks=0
+2026-11-18 12:42:40,938 | INFO | trip=00000015 | Top-1 accuracy: HMM 0.9167, classifier-only 0.8788 | continuity 0.9959 | total 0.46s
+2026-11-18 12:42:41,015 | INFO | POST /predict trip=00000017 | started
+2026-11-18 12:42:41,241 | INFO | trip=00000017 | 1346 GPS points, 1346 with candidates, 9822 candidate rows | load 0.03s, features 0.05s, classifier 0.02s, HMM 0.13s | chain breaks=0
+2026-11-18 12:42:41,285 | INFO | trip=00000017 | Top-1 accuracy: HMM 0.9495, classifier-only 0.9294 | continuity 0.8743 | total 0.27s
+2026-11-18 12:42:41,416 | INFO | POST /predict trip=00000023 | started
+2026-11-18 12:42:41,480 | INFO | trip=00000023 | 458 GPS points, 458 with candidates, 1960 candidate rows | load 0.01s, features 0.01s, classifier 0.01s, HMM 0.03s | chain breaks=0
+2026-11-18 12:42:41,503 | INFO | trip=00000023 | Top-1 accuracy: HMM 0.9585, classifier-only 0.9454 | continuity 0.9781 | total 0.09s
+2026-11-18 12:42:41,571 | INFO | POST /predict trip=00000030 | started
+2026-11-18 12:42:41,679 | INFO | trip=00000030 | 654 GPS points, 654 with candidates, 5021 candidate rows | load 0.03s, features 0.02s, classifier 0.01s, HMM 0.06s | chain breaks=0
+2026-11-18 12:42:41,717 | INFO | trip=00000030 | Top-1 accuracy: HMM 0.8761, classifier-only 0.8089 | continuity 0.9126 | total 0.15s
+2026-11-18 12:42:41,796 | INFO | POST /predict trip=00000049 | started
+2026-11-18 12:42:41,977 | INFO | trip=00000049 | 2642 GPS points, 2642 with candidates, 11526 candidate rows | load 0.03s, features 0.03s, classifier 0.01s, HMM 0.10s | chain breaks=0
+2026-11-18 12:42:42,035 | INFO | trip=00000049 | Top-1 accuracy: HMM 0.9974, classifier-only 0.9913 | continuity 0.9932 | total 0.24s
+2026-11-18 12:42:42,121 | INFO | POST /predict trip=00000059 | started
+2026-11-18 12:42:42,265 | INFO | trip=00000059 | 1031 GPS points, 1031 with candidates, 7305 candidate rows | load 0.02s, features 0.02s, classifier 0.01s, HMM 0.09s | chain breaks=0
+2026-11-18 12:42:42,296 | INFO | trip=00000059 | Top-1 accuracy: HMM 0.9806, classifier-only 0.9602 | continuity 0.9311 | total 0.17s
+2026-11-18 12:42:42,371 | INFO | POST /predict trip=00000067 | started
+2026-11-18 12:42:42,438 | INFO | trip=00000067 | 916 GPS points, 916 with candidates, 5100 candidate rows | load 0.02s, features 0.01s, classifier 0.01s, HMM 0.03s | chain breaks=0
+2026-11-18 12:42:42,457 | INFO | trip=00000067 | Top-1 accuracy: HMM 0.9662, classifier-only 0.9629 | continuity 0.9912 | total 0.09s
+2026-11-18 12:42:42,510 | INFO | POST /predict trip=00000073 | started
+2026-11-18 12:42:42,606 | INFO | trip=00000073 | 1144 GPS points, 1144 with candidates, 7326 candidate rows | load 0.02s, features 0.02s, classifier 0.01s, HMM 0.04s | chain breaks=1
+2026-11-18 12:42:42,664 | INFO | trip=00000073 | Top-1 accuracy: HMM 0.9860, classifier-only 0.9816 | continuity 0.9912 | total 0.15s
+2026-11-18 12:42:42,724 | INFO | POST /predict trip=00000087 | started
+2026-11-18 12:42:42,910 | INFO | trip=00000087 | 1399 GPS points, 1399 with candidates, 8702 candidate rows | load 0.04s, features 0.06s, classifier 0.01s, HMM 0.07s | chain breaks=0
+2026-11-18 12:42:42,956 | INFO | trip=00000087 | Top-1 accuracy: HMM 0.9950, classifier-only 0.9485 | continuity 0.9893 | total 0.23s
+2026-11-18 12:42:43,079 | INFO | POST /predict trip=00000094 | started
+2026-11-18 12:42:43,310 | INFO | trip=00000094 | 3230 GPS points, 3230 with candidates, 21468 candidate rows | load 0.02s, features 0.03s, classifier 0.03s, HMM 0.16s | chain breaks=2
+2026-11-18 12:42:43,393 | INFO | trip=00000094 | Top-1 accuracy: HMM 0.9545, classifier-only 0.9446 | continuity 0.9805 | total 0.31s
+2026-11-18 12:43:06,508 | INFO | GET /trips -> 10 trips
+2026-11-18 12:43:06,527 | INFO | POST /predict trip=00000030 | started
+2026-11-18 12:43:06,628 | INFO | trip=00000030 | 654 GPS points, 654 with candidates, 5021 candidate rows | load 0.01s, features 0.02s, classifier 0.01s, HMM 0.07s | chain breaks=0
+2026-11-18 12:43:06,659 | INFO | trip=00000030 | Top-1 accuracy: HMM 0.8761, classifier-only 0.8089 | continuity 0.9126 | total 0.13s
+2026-11-18 13:17:15,154 | INFO | model loaded: 11 features, tuned (Optuna best) | features=11 | HMM beta=5.0 m | trips folder=C:\Users\Temp\Desktop\ML Hackathon\pathsnap\data\raw\evaluator_test
+2026-11-18 13:17:37,868 | INFO | GET /trips -> 10 trips
+2026-11-18 13:17:38,741 | INFO | POST /predict trip=00000087 | started
+2026-11-18 13:17:38,951 | INFO | trip=00000087 | 1399 GPS points, 1399 with candidates, 8702 candidate rows | load 0.02s, features 0.07s, classifier 0.03s, HMM 0.09s | chain breaks=0
+2026-11-18 13:17:38,991 | INFO | trip=00000087 | Top-1 accuracy: HMM 0.9950, classifier-only 0.9485 | continuity 0.9893 | total 0.25s
+2026-11-18 13:19:44,156 | INFO | GET /trips -> 10 trips
+2026-11-18 13:19:45,138 | INFO | POST /predict trip=00000087 | started
+2026-11-18 13:19:45,335 | INFO | trip=00000087 | 1399 GPS points, 1399 with candidates, 8702 candidate rows | load 0.02s, features 0.06s, classifier 0.01s, HMM 0.09s | chain breaks=0
+2026-11-18 13:19:45,365 | INFO | trip=00000087 | Top-1 accuracy: HMM 0.9950, classifier-only 0.9485 | continuity 0.9893 | total 0.23s
+2026-11-18 13:20:08,328 | INFO | POST /predict trip=00000087 | started
+2026-11-18 13:20:08,526 | INFO | trip=00000087 | 1399 GPS points, 1399 with candidates, 8702 candidate rows | load 0.02s, features 0.06s, classifier 0.01s, HMM 0.10s | chain breaks=0
+2026-11-18 13:20:08,560 | INFO | trip=00000087 | Top-1 accuracy: HMM 0.9950, classifier-only 0.9485 | continuity 0.9893 | total 0.23s
+2026-11-18 13:20:40,361 | INFO | POST /predict trip=00000087 | started
+2026-11-18 13:20:40,556 | INFO | trip=00000087 | 1399 GPS points, 1399 with candidates, 8702 candidate rows | load 0.02s, features 0.06s, classifier 0.01s, HMM 0.10s | chain breaks=0
+2026-11-18 13:20:40,585 | INFO | trip=00000087 | Top-1 accuracy: HMM 0.9950, classifier-only 0.9485 | continuity 0.9893 | total 0.22s
+2026-11-18 13:21:34,518 | INFO | GET /trips -> 10 trips
+2026-11-18 13:21:34,520 | INFO | POST /predict trip=00000015 | started
+2026-11-18 13:21:34,842 | INFO | trip=00000015 | 6854 GPS points, 6854 with candidates, 38835 candidate rows | load 0.00s, features 0.04s, classifier 0.05s, HMM 0.23s | chain breaks=0
+2026-11-18 13:21:34,951 | INFO | trip=00000015 | Top-1 accuracy: HMM 0.9167, classifier-only 0.8788 | continuity 0.9959 | total 0.43s
+2026-11-18 13:21:35,023 | INFO | POST /predict trip=00000017 | started
+2026-11-18 13:21:35,232 | INFO | trip=00000017 | 1346 GPS points, 1346 with candidates, 9822 candidate rows | load 0.02s, features 0.05s, classifier 0.02s, HMM 0.12s | chain breaks=0
+2026-11-18 13:21:35,267 | INFO | trip=00000017 | Top-1 accuracy: HMM 0.9495, classifier-only 0.9294 | continuity 0.8743 | total 0.24s
+2026-11-18 13:21:35,351 | INFO | POST /predict trip=00000023 | started
+2026-11-18 13:21:35,397 | INFO | trip=00000023 | 458 GPS points, 458 with candidates, 1960 candidate rows | load 0.00s, features 0.01s, classifier 0.01s, HMM 0.03s | chain breaks=0
+2026-11-18 13:21:35,414 | INFO | trip=00000023 | Top-1 accuracy: HMM 0.9585, classifier-only 0.9454 | continuity 0.9781 | total 0.06s
+2026-11-18 13:21:35,461 | INFO | POST /predict trip=00000030 | started
+2026-11-18 13:21:35,561 | INFO | trip=00000030 | 654 GPS points, 654 with candidates, 5021 candidate rows | load 0.01s, features 0.02s, classifier 0.01s, HMM 0.06s | chain breaks=0
+2026-11-18 13:21:35,592 | INFO | trip=00000030 | Top-1 accuracy: HMM 0.8761, classifier-only 0.8089 | continuity 0.9126 | total 0.13s
+2026-11-18 13:21:35,648 | INFO | POST /predict trip=00000049 | started
+2026-11-18 13:21:35,820 | INFO | trip=00000049 | 2642 GPS points, 2642 with candidates, 11526 candidate rows | load 0.01s, features 0.03s, classifier 0.01s, HMM 0.11s | chain breaks=0
+2026-11-18 13:21:35,873 | INFO | trip=00000049 | Top-1 accuracy: HMM 0.9974, classifier-only 0.9913 | continuity 0.9932 | total 0.22s
+2026-11-18 13:21:35,926 | INFO | POST /predict trip=00000059 | started
+2026-11-18 13:21:36,065 | INFO | trip=00000059 | 1031 GPS points, 1031 with candidates, 7305 candidate rows | load 0.01s, features 0.02s, classifier 0.01s, HMM 0.10s | chain breaks=0
+2026-11-18 13:21:36,092 | INFO | trip=00000059 | Top-1 accuracy: HMM 0.9806, classifier-only 0.9602 | continuity 0.9311 | total 0.17s
+2026-11-18 13:21:36,130 | INFO | POST /predict trip=00000067 | started
+2026-11-18 13:21:36,202 | INFO | trip=00000067 | 916 GPS points, 916 with candidates, 5100 candidate rows | load 0.00s, features 0.01s, classifier 0.02s, HMM 0.04s | chain breaks=0
+2026-11-18 13:21:36,236 | INFO | trip=00000067 | Top-1 accuracy: HMM 0.9662, classifier-only 0.9629 | continuity 0.9912 | total 0.11s
+2026-11-18 13:21:36,270 | INFO | POST /predict trip=00000073 | started
+2026-11-18 13:21:36,355 | INFO | trip=00000073 | 1144 GPS points, 1144 with candidates, 7326 candidate rows | load 0.01s, features 0.02s, classifier 0.01s, HMM 0.05s | chain breaks=1
+2026-11-18 13:21:36,386 | INFO | trip=00000073 | Top-1 accuracy: HMM 0.9860, classifier-only 0.9816 | continuity 0.9912 | total 0.12s
+2026-11-18 13:21:36,444 | INFO | POST /predict trip=00000087 | started
+2026-11-18 13:21:36,629 | INFO | trip=00000087 | 1399 GPS points, 1399 with candidates, 8702 candidate rows | load 0.04s, features 0.08s, classifier 0.01s, HMM 0.06s | chain breaks=0
+2026-11-18 13:21:36,669 | INFO | trip=00000087 | Top-1 accuracy: HMM 0.9950, classifier-only 0.9485 | continuity 0.9893 | total 0.22s
+2026-11-18 13:21:36,752 | INFO | POST /predict trip=00000094 | started
+2026-11-18 13:21:36,966 | INFO | trip=00000094 | 3230 GPS points, 3230 with candidates, 21468 candidate rows | load 0.01s, features 0.03s, classifier 0.03s, HMM 0.15s | chain breaks=2
+2026-11-18 13:21:37,041 | INFO | trip=00000094 | Top-1 accuracy: HMM 0.9545, classifier-only 0.9446 | continuity 0.9805 | total 0.29s
+2026-11-18 15:14:17,629 | INFO | model loaded: 11 features, tuned (Optuna best) | features=11 | HMM beta=5.0 m | trips folder=C:\Users\Temp\Desktop\ML Hackathon\pathsnap\data\raw\evaluator_test
+2026-11-18 15:14:20,666 | INFO | GET /trips -> 10 trips
+2026-11-18 15:14:24,551 | INFO | POST /predict trip=00000087 | started
+2026-11-18 15:14:24,753 | INFO | trip=00000087 | 1399 GPS points, 1399 with candidates, 8702 candidate rows | load 0.02s, features 0.06s, classifier 0.03s, HMM 0.08s | chain breaks=0
+2026-11-18 15:14:24,794 | INFO | trip=00000087 | Top-1 accuracy: HMM 0.9950, classifier-only 0.9485 | continuity 0.9893 | total 0.24s
+2026-11-18 15:15:35,336 | INFO | GET /trips -> 10 trips
+2026-11-18 15:16:50,099 | INFO | GET /trips -> 10 trips
+2026-11-18 15:16:50,122 | INFO | POST /predict trip=00000015 | started
+2026-11-18 15:16:50,522 | INFO | trip=00000015 | 6854 GPS points, 6854 with candidates, 38835 candidate rows | load 0.01s, features 0.05s, classifier 0.05s, HMM 0.28s | chain breaks=0
+2026-11-18 15:16:50,657 | INFO | trip=00000015 | Top-1 accuracy: HMM 0.9167, classifier-only 0.8788 | continuity 0.9959 | total 0.53s
+2026-11-18 15:17:08,070 | INFO | POST /predict trip=00000017 | started
+2026-11-18 15:17:08,336 | INFO | trip=00000017 | 1346 GPS points, 1346 with candidates, 9822 candidate rows | load 0.02s, features 0.07s, classifier 0.02s, HMM 0.16s | chain breaks=0
+2026-11-18 15:17:08,389 | INFO | trip=00000017 | Top-1 accuracy: HMM 0.9495, classifier-only 0.9294 | continuity 0.8743 | total 0.32s
+2026-11-18 15:21:54,822 | INFO | GET /trips -> 10 trips
+2026-11-18 15:21:57,711 | INFO | POST /predict trip=00000015 | started
+2026-11-18 15:21:58,152 | INFO | trip=00000015 | 6854 GPS points, 6854 with candidates, 38835 candidate rows | load 0.01s, features 0.06s, classifier 0.06s, HMM 0.32s | chain breaks=0
+2026-11-18 15:21:58,303 | INFO | trip=00000015 | Top-1 accuracy: HMM 0.9167, classifier-only 0.8788 | continuity 0.9959 | total 0.59s
+2026-11-18 15:29:47,335 | INFO | GET /trips -> 10 trips
+2026-11-18 15:29:48,836 | INFO | POST /predict trip=00000073 | started
+2026-11-18 15:29:48,947 | INFO | trip=00000073 | 1144 GPS points, 1144 with candidates, 7326 candidate rows | load 0.01s, features 0.02s, classifier 0.02s, HMM 0.06s | chain breaks=1
+2026-11-18 15:29:48,977 | INFO | trip=00000073 | Top-1 accuracy: HMM 0.9860, classifier-only 0.9816 | continuity 0.9912 | total 0.14s
+2026-11-18 15:33:00,851 | INFO | model loaded: 11 features, tuned (Optuna best) | features=11 | HMM beta=5.0 m | trips folder=C:\Users\Temp\Desktop\ML Hackathon\pathsnap\data\raw\evaluator_test
+2026-11-18 15:54:18,157 | INFO | model loaded: 11 features, tuned (Optuna best) | features=11 | HMM beta=5.0 m | trips folder=C:\Users\Temp\Desktop\ML Hackathon\pathsnap\data\raw\evaluator_test
+2026-11-18 20:24:47,650 | INFO | model loaded: 11 features, tuned (Optuna best) | features=11 | HMM beta=5.0 m | trips folder=C:\Users\Temp\Desktop\ML Hackathon\pathsnap\data\raw\evaluator_test
+2026-11-18 20:24:52,354 | INFO | GET /trips -> 10 trips
+2026-11-18 20:24:52,392 | INFO | POST /predict trip=00000087 | started
+2026-11-18 20:24:52,607 | INFO | trip=00000087 | 1399 GPS points, 1399 with candidates, 8702 candidate rows | load 0.04s, features 0.06s, classifier 0.03s, HMM 0.08s | chain breaks=0
+2026-11-18 20:24:52,655 | INFO | trip=00000087 | Top-1 accuracy: HMM 0.9950, classifier-only 0.9485 | continuity 0.9893 | total 0.26s
+2026-11-18 20:24:52,742 | INFO | POST /predict trip=00000030 | started
+2026-11-18 20:24:52,847 | INFO | trip=00000030 | 654 GPS points, 654 with candidates, 5021 candidate rows | load 0.02s, features 0.02s, classifier 0.01s, HMM 0.05s | chain breaks=0
+2026-11-18 20:24:52,884 | INFO | trip=00000030 | Top-1 accuracy: HMM 0.8761, classifier-only 0.8089 | continuity 0.9126 | total 0.14s

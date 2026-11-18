@@ -1,0 +1,80 @@
+{'feature_set': 'Phase 1 (9 features)', 'n_features': 9, 'cv_macro_f1': np.float64(0.928516807886526), 'cv_macro_f1_std': np.float64(0.008627343993034102), 'cv_log_loss': np.float64(0.09940074049282527)}
+{'feature_set': '+ heading_diff_long', 'n_features': 10, 'cv_macro_f1': np.float64(0.938647750560931), 'cv_macro_f1_std': np.float64(0.00933120898726011), 'cv_log_loss': np.float64(0.08998683468479052)}
+{'feature_set': '+ heading_diff_long + disp_long', 'n_features': 11, 'cv_macro_f1': np.float64(0.9399808443018293), 'cv_macro_f1_std': np.float64(0.00891991592249249), 'cv_log_loss': np.float64(0.08686802055020086)}
+0 COMPLETE 0.94 {'learning_rate': 0.1, 'max_iter': 150, 'max_leaf_nodes': 31, 'min_samples_leaf': 20, 'l2_regularization': 0.0001, 'max_features': 1.0}
+1 COMPLETE 0.9406 {'learning_rate': 0.0551, 'max_iter': 766, 'max_leaf_nodes': 118, 'min_samples_leaf': 89, 'l2_regularization': 0.0006, 'max_features': 0.578}
+2 COMPLETE 0.9407 {'learning_rate': 0.0234, 'max_iter': 707, 'max_leaf_nodes': 81, 'min_samples_leaf': 134, 'l2_regularization': 0.0001, 'max_features': 0.985}
+3 COMPLETE 0.9343 {'learning_rate': 0.1906, 'max_iter': 248, 'max_leaf_nodes': 24, 'min_samples_leaf': 19, 'l2_regularization': 0.0033, 'max_features': 0.7624}
+4 COMPLETE 0.9409 {'learning_rate': 0.0644, 'max_iter': 304, 'max_leaf_nodes': 84, 'min_samples_leaf': 16, 'l2_regularization': 0.0029, 'max_features': 0.6832}
+5 COMPLETE 0.9403 {'learning_rate': 0.0688, 'max_iter': 650, 'max_leaf_nodes': 26, 'min_samples_leaf': 65, 'l2_regularization': 0.0916, 'max_features': 0.5232}
+6 COMPLETE 0.9397 {'learning_rate': 0.1036, 'max_iter': 219, 'max_leaf_nodes': 17, 'min_samples_leaf': 331, 'l2_regularization': 6.7322, 'max_features': 0.9042}
+7 COMPLETE 0.9411 {'learning_rate': 0.0456, 'max_iter': 168, 'max_leaf_nodes': 103, 'min_samples_leaf': 49, 'l2_regularization': 0.0004, 'max_features': 0.7476}
+8 COMPLETE 0.9412 {'learning_rate': 0.022, 'max_iter': 737, 'max_leaf_nodes': 30, 'min_samples_leaf': 113, 'l2_regularization': 0.0036, 'max_features': 0.76}
+9 COMPLETE 0.9404 {'learning_rate': 0.0879, 'max_iter': 229, 'max_leaf_nodes': 234, 'min_samples_leaf': 173, 'l2_regularization': 4.983, 'max_features': 0.9474}
+10 COMPLETE 0.94 {'learning_rate': 0.0258, 'max_iter': 732, 'max_leaf_nodes': 15, 'min_samples_leaf': 17, 'l2_regularization': 0.0002, 'max_features': 0.9279}
+11 COMPLETE 0.9404 {'learning_rate': 0.0337, 'max_iter': 390, 'max_leaf_nodes': 209, 'min_samples_leaf': 56, 'l2_regularization': 0.0005, 'max_features': 0.8194}
+12 COMPLETE 0.938 {'learning_rate': 0.0267, 'max_iter': 185, 'max_leaf_nodes': 17, 'min_samples_leaf': 93, 'l2_regularization': 0.004, 'max_features': 0.7027}
+13 COMPLETE 0.9415 {'learning_rate': 0.0492, 'max_iter': 291, 'max_leaf_nodes': 73, 'min_samples_leaf': 88, 'l2_regularization': 0.0373, 'max_features': 0.7565}
+14 COMPLETE 0.9411 {'learning_rate': 0.024, 'max_iter': 649, 'max_leaf_nodes': 43, 'min_samples_leaf': 73, 'l2_regularization': 0.0017, 'max_features': 0.6313}
+15 COMPLETE 0.9406 {'learning_rate': 0.037, 'max_iter': 567, 'max_leaf_nodes': 23, 'min_samples_leaf': 197, 'l2_regularization': 0.0052, 'max_features': 0.6836}
+16 COMPLETE 0.9414 {'learning_rate': 0.0226, 'max_iter': 571, 'max_leaf_nodes': 45, 'min_samples_leaf': 175, 'l2_regularization': 0.0122, 'max_features': 0.8043}
+17 COMPLETE 0.9402 {'learning_rate': 0.0291, 'max_iter': 655, 'max_leaf_nodes': 19, 'min_samples_leaf': 238, 'l2_regularization': 0.015, 'max_features': 0.8441}
+18 COMPLETE 0.9412 {'learning_rate': 0.0236, 'max_iter': 450, 'max_leaf_nodes': 56, 'min_samples_leaf': 155, 'l2_regularization': 0.0265, 'max_features': 0.8193}
+19 COMPLETE 0.9411 {'learning_rate': 0.0457, 'max_iter': 341, 'max_leaf_nodes': 56, 'min_samples_leaf': 67, 'l2_regularization': 0.0197, 'max_features': 0.7613}
+20 COMPLETE 0.941 {'learning_rate': 0.0533, 'max_iter': 468, 'max_leaf_nodes': 116, 'min_samples_leaf': 72, 'l2_regularization': 0.0016, 'max_features': 0.7237}
+21 COMPLETE 0.9415 {'learning_rate': 0.0235, 'max_iter': 419, 'max_leaf_nodes': 91, 'min_samples_leaf': 221, 'l2_regularization': 0.0215, 'max_features': 0.8401}
+22 COMPLETE 0.9411 {'learning_rate': 0.0287, 'max_iter': 465, 'max_leaf_nodes': 94, 'min_samples_leaf': 384, 'l2_regularization': 0.0838, 'max_features': 0.8388}
+23 COMPLETE 0.9409 {'learning_rate': 0.05, 'max_iter': 563, 'max_leaf_nodes': 77, 'min_samples_leaf': 193, 'l2_regularization': 0.0564, 'max_features': 0.8345}
+24 COMPLETE 0.9413 {'learning_rate': 0.0315, 'max_iter': 331, 'max_leaf_nodes': 93, 'min_samples_leaf': 385, 'l2_regularization': 0.0161, 'max_features': 0.7175}
+25 COMPLETE 0.9412 {'learning_rate': 0.0569, 'max_iter': 368, 'max_leaf_nodes': 66, 'min_samples_leaf': 212, 'l2_regularization': 0.0011, 'max_features': 0.8457}
+26 COMPLETE 0.9408 {'learning_rate': 0.0217, 'max_iter': 296, 'max_leaf_nodes': 108, 'min_samples_leaf': 344, 'l2_regularization': 0.0067, 'max_features': 0.8208}
+27 COMPLETE 0.9417 {'learning_rate': 0.0381, 'max_iter': 297, 'max_leaf_nodes': 107, 'min_samples_leaf': 276, 'l2_regularization': 0.0341, 'max_features': 0.8511}
+28 COMPLETE 0.9413 {'learning_rate': 0.0246, 'max_iter': 346, 'max_leaf_nodes': 96, 'min_samples_leaf': 111, 'l2_regularization': 0.0095, 'max_features': 0.9028}
+29 COMPLETE 0.9415 {'learning_rate': 0.0261, 'max_iter': 252, 'max_leaf_nodes': 105, 'min_samples_leaf': 184, 'l2_regularization': 0.0633, 'max_features': 0.9147}
+30 COMPLETE 0.9414 {'learning_rate': 0.0384, 'max_iter': 345, 'max_leaf_nodes': 91, 'min_samples_leaf': 270, 'l2_regularization': 0.0219, 'max_features': 0.8955}
+31 COMPLETE 0.9416 {'learning_rate': 0.0305, 'max_iter': 391, 'max_leaf_nodes': 91, 'min_samples_leaf': 109, 'l2_regularization': 0.1147, 'max_features': 0.8548}
+32 COMPLETE 0.9417 {'learning_rate': 0.028, 'max_iter': 233, 'max_leaf_nodes': 163, 'min_samples_leaf': 253, 'l2_regularization': 0.0264, 'max_features': 0.8267}
+33 COMPLETE 0.9417 {'learning_rate': 0.0291, 'max_iter': 274, 'max_leaf_nodes': 139, 'min_samples_leaf': 183, 'l2_regularization': 0.0307, 'max_features': 0.8078}
+34 COMPLETE 0.9417 {'learning_rate': 0.0299, 'max_iter': 335, 'max_leaf_nodes': 152, 'min_samples_leaf': 156, 'l2_regularization': 0.0085, 'max_features': 0.8619}
+35 COMPLETE 0.9411 {'learning_rate': 0.0336, 'max_iter': 161, 'max_leaf_nodes': 155, 'min_samples_leaf': 323, 'l2_regularization': 0.029, 'max_features': 0.8271}
+36 COMPLETE 0.9419 {'learning_rate': 0.0224, 'max_iter': 279, 'max_leaf_nodes': 120, 'min_samples_leaf': 193, 'l2_regularization': 0.0153, 'max_features': 0.823}
+37 COMPLETE 0.9413 {'learning_rate': 0.0311, 'max_iter': 231, 'max_leaf_nodes': 175, 'min_samples_leaf': 344, 'l2_regularization': 0.0134, 'max_features': 0.8866}
+38 COMPLETE 0.941 {'learning_rate': 0.0252, 'max_iter': 196, 'max_leaf_nodes': 99, 'min_samples_leaf': 237, 'l2_regularization': 0.0156, 'max_features': 0.7443}
+39 COMPLETE 0.9413 {'learning_rate': 0.0301, 'max_iter': 331, 'max_leaf_nodes': 168, 'min_samples_leaf': 382, 'l2_regularization': 0.0142, 'max_features': 0.7601}
+40 COMPLETE 0.9416 {'learning_rate': 0.0302, 'max_iter': 317, 'max_leaf_nodes': 132, 'min_samples_leaf': 250, 'l2_regularization': 0.0521, 'max_features': 0.8421}
+41 COMPLETE 0.9418 {'learning_rate': 0.0261, 'max_iter': 247, 'max_leaf_nodes': 225, 'min_samples_leaf': 233, 'l2_regularization': 0.0266, 'max_features': 0.785}
+42 COMPLETE 0.9412 {'learning_rate': 0.0246, 'max_iter': 223, 'max_leaf_nodes': 175, 'min_samples_leaf': 210, 'l2_regularization': 0.0136, 'max_features': 0.7819}
+43 COMPLETE 0.9415 {'learning_rate': 0.0335, 'max_iter': 299, 'max_leaf_nodes': 98, 'min_samples_leaf': 162, 'l2_regularization': 0.0207, 'max_features': 0.7559}
+44 COMPLETE 0.9413 {'learning_rate': 0.0381, 'max_iter': 194, 'max_leaf_nodes': 140, 'min_samples_leaf': 226, 'l2_regularization': 0.0352, 'max_features': 0.7691}
+45 COMPLETE 0.9414 {'learning_rate': 0.027, 'max_iter': 296, 'max_leaf_nodes': 161, 'min_samples_leaf': 130, 'l2_regularization': 0.1193, 'max_features': 0.8103}
+46 COMPLETE 0.9401 {'learning_rate': 0.0215, 'max_iter': 119, 'max_leaf_nodes': 159, 'min_samples_leaf': 249, 'l2_regularization': 0.0092, 'max_features': 0.8344}
+47 COMPLETE 0.9414 {'learning_rate': 0.033, 'max_iter': 274, 'max_leaf_nodes': 203, 'min_samples_leaf': 230, 'l2_regularization': 0.0416, 'max_features': 0.7515}
+48 COMPLETE 0.9416 {'learning_rate': 0.0275, 'max_iter': 279, 'max_leaf_nodes': 165, 'min_samples_leaf': 286, 'l2_regularization': 0.1998, 'max_features': 0.8055}
+49 COMPLETE 0.9411 {'learning_rate': 0.0264, 'max_iter': 203, 'max_leaf_nodes': 116, 'min_samples_leaf': 315, 'l2_regularization': 0.0182, 'max_features': 0.8304}
+                                                         0                     1                                 2
+model                  Phase 1 model (9 features, untuned)  11 features, untuned  11 features, tuned (Optuna best)
+cv_macro_f1                                         0.9285                  0.94                            0.9419
+cv_macro_f1_std                                     0.0086                0.0089                            0.0076
+cv_log_loss                                         0.0994                0.0869                            0.0822
+train_macro_f1                                      0.9406                0.9535                            0.9578
+train_accuracy                                      0.9683                0.9751                            0.9774
+test_macro_f1                                       0.9156                0.9239                            0.9245
+test_accuracy                                        0.955                0.9593                            0.9599
+test_precision                                      0.8648                0.8768                            0.8865
+test_recall                                         0.8513                0.8674                            0.8593
+test_log_loss                                       0.1081                0.0991                            0.0944
+test_top1_accuracy                                   0.863                0.8768                            0.8824
+test_route_continuity                               0.9241                0.9297                            0.9351
+train_time_s                                        1.2661                1.2273                            4.6622
+inference_time_s                                    0.0423                0.0443                            0.1145
+final model: 11 features, tuned (Optuna best)
+{
+ "n_trials": 50,
+ "completed": 50,
+ "pruned": 0,
+ "search_seconds": 1109.1150586605072,
+ "mean_seconds_per_completed_trial": 22.17400916099548,
+ "folds_per_trial": 5,
+ "train_rows": 369705
+} 
+best 36 0.9419 {'learning_rate': 0.022372191999559105, 'max_iter': 279, 'max_leaf_nodes': 120, 'min_samples_leaf': 193, 'l2_regularization': 0.015338469691042122, 'max_features': 0.8230127503752016}

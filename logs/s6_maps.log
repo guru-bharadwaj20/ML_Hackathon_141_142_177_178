@@ -1,0 +1,37 @@
+C:\Users\Temp\AppData\Roaming\Python\Python313\site-packages\folium\raster_layers.py:129: UserWarning: CartoDB tiles now require an API key. Please provide one to continue using the tiles. You can request the key at https://carto.com/basemaps/apikey/.
+  tiles = tiles.build_url(fill_subdomain=False, scale_factor="{r}")  # type: ignore
+{'trip_id': '00000007', 'points': 1354, 'top1_classifier': 0.9460856720827179, 'top1_hmm': 0.94903988183161, 'continuity_hmm': 0.9992609016999261, 'load_s': 0.002, 'candidates_features_s': 0.012, 'classifier_s': 0.026, 'hmm_viterbi_s': 0.055}
+C:\Users\Temp\AppData\Roaming\Python\Python313\site-packages\folium\raster_layers.py:129: UserWarning: CartoDB tiles now require an API key. Please provide one to continue using the tiles. You can request the key at https://carto.com/basemaps/apikey/.
+  tiles = tiles.build_url(fill_subdomain=False, scale_factor="{r}")  # type: ignore
+{'trip_id': '00000009', 'points': 1049, 'top1_classifier': 0.8779790276453765, 'top1_hmm': 0.9189704480457579, 'continuity_hmm': 0.9446564885496184, 'load_s': 0.003, 'candidates_features_s': 0.017, 'classifier_s': 0.014, 'hmm_viterbi_s': 0.062}
+C:\Users\Temp\AppData\Roaming\Python\Python313\site-packages\folium\raster_layers.py:129: UserWarning: CartoDB tiles now require an API key. Please provide one to continue using the tiles. You can request the key at https://carto.com/basemaps/apikey/.
+  tiles = tiles.build_url(fill_subdomain=False, scale_factor="{r}")  # type: ignore
+{'trip_id': '00000040', 'points': 2995, 'top1_classifier': 0.9368948247078465, 'top1_hmm': 0.9502504173622704, 'continuity_hmm': 0.9963259853039412, 'load_s': 0.006, 'candidates_features_s': 0.024, 'classifier_s': 0.019, 'hmm_viterbi_s': 0.084}
+C:\Users\Temp\AppData\Roaming\Python\Python313\site-packages\folium\raster_layers.py:129: UserWarning: CartoDB tiles now require an API key. Please provide one to continue using the tiles. You can request the key at https://carto.com/basemaps/apikey/.
+  tiles = tiles.build_url(fill_subdomain=False, scale_factor="{r}")  # type: ignore
+{'trip_id': '00000052', 'points': 262, 'top1_classifier': 0.9770992366412213, 'top1_hmm': 1.0, 'continuity_hmm': 0.9616858237547893, 'load_s': 0.001, 'candidates_features_s': 0.008, 'classifier_s': 0.007, 'hmm_viterbi_s': 0.009}
+C:\Users\Temp\AppData\Roaming\Python\Python313\site-packages\folium\raster_layers.py:129: UserWarning: CartoDB tiles now require an API key. Please provide one to continue using the tiles. You can request the key at https://carto.com/basemaps/apikey/.
+  tiles = tiles.build_url(fill_subdomain=False, scale_factor="{r}")  # type: ignore
+{'trip_id': '00000056', 'points': 3958, 'top1_classifier': 0.9178878221323901, 'top1_hmm': 0.9484588175846387, 'continuity_hmm': 0.9651250947687642, 'load_s': 0.007, 'candidates_features_s': 0.041, 'classifier_s': 0.037, 'hmm_viterbi_s': 0.161}
+C:\Users\Temp\AppData\Roaming\Python\Python313\site-packages\folium\raster_layers.py:129: UserWarning: CartoDB tiles now require an API key. Please provide one to continue using the tiles. You can request the key at https://carto.com/basemaps/apikey/.
+  tiles = tiles.build_url(fill_subdomain=False, scale_factor="{r}")  # type: ignore
+{'trip_id': '00000065', 'points': 768, 'top1_classifier': 0.8541666666666666, 'top1_hmm': 0.8802083333333334, 'continuity_hmm': 0.9790575916230366, 'load_s': 0.003, 'candidates_features_s': 0.014, 'classifier_s': 0.009, 'hmm_viterbi_s': 0.049}
+C:\Users\Temp\AppData\Roaming\Python\Python313\site-packages\folium\raster_layers.py:129: UserWarning: CartoDB tiles now require an API key. Please provide one to continue using the tiles. You can request the key at https://carto.com/basemaps/apikey/.
+  tiles = tiles.build_url(fill_subdomain=False, scale_factor="{r}")  # type: ignore
+{'trip_id': '00000076', 'points': 1486, 'top1_classifier': 0.933378196500673, 'top1_hmm': 0.9744279946164199, 'continuity_hmm': 0.971937029431896, 'load_s': 0.013, 'candidates_features_s': 0.041, 'classifier_s': 0.014, 'hmm_viterbi_s': 0.11}
+C:\Users\Temp\AppData\Roaming\Python\Python313\site-packages\folium\raster_layers.py:129: UserWarning: CartoDB tiles now require an API key. Please provide one to continue using the tiles. You can request the key at https://carto.com/basemaps/apikey/.
+  tiles = tiles.build_url(fill_subdomain=False, scale_factor="{r}")  # type: ignore
+{'trip_id': '00000077', 'points': 3911, 'top1_classifier': 0.756583993863462, 'top1_hmm': 0.7992840705701867, 'continuity_hmm': 0.9923273657289002, 'load_s': 0.003, 'candidates_features_s': 0.032, 'classifier_s': 0.031, 'hmm_viterbi_s': 0.178}
+C:\Users\Temp\AppData\Roaming\Python\Python313\site-packages\folium\raster_layers.py:129: UserWarning: CartoDB tiles now require an API key. Please provide one to continue using the tiles. You can request the key at https://carto.com/basemaps/apikey/.
+  tiles = tiles.build_url(fill_subdomain=False, scale_factor="{r}")  # type: ignore
+{'trip_id': '00000091', 'points': 874, 'top1_classifier': 0.914187643020595, 'top1_hmm': 0.959954233409611, 'continuity_hmm': 0.9713631156930126, 'load_s': 0.003, 'candidates_features_s': 0.014, 'classifier_s': 0.013, 'hmm_viterbi_s': 0.044}
+ trip_id  points  top1_classifier  top1_hmm  continuity_hmm  load_s  candidates_features_s  classifier_s  hmm_viterbi_s
+00000007    1354           0.9461    0.9490          0.9993   0.002                  0.012         0.026          0.055
+00000009    1049           0.8780    0.9190          0.9447   0.003                  0.017         0.014          0.062
+00000040    2995           0.9369    0.9503          0.9963   0.006                  0.024         0.019          0.084
+00000052     262           0.9771    1.0000          0.9617   0.001                  0.008         0.007          0.009
+00000056    3958           0.9179    0.9485          0.9651   0.007                  0.041         0.037          0.161
+00000065     768           0.8542    0.8802          0.9791   0.003                  0.014         0.009          0.049
+00000076    1486           0.9334    0.9744          0.9719   0.013                  0.041         0.014          0.110
+00000077    3911           0.7566    0.7993          0.9923   0.003                  0.032         0.031          0.178
+00000091     874           0.9142    0.9600          0.9714   0.003                  0.014         0.013          0.044
