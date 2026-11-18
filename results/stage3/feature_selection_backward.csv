@@ -1,0 +1,10 @@
+n_features,features,dropped_next,cv_macro_f1,cv_std
+11,"heading_diff,dist_minus_min,rank,nbr_dist,tproj,speed,dist,arc_len,has_reverse,n_cand,fallback",fallback,0.9280485182468807,0.008654163876118242
+10,"heading_diff,dist_minus_min,rank,nbr_dist,tproj,speed,dist,arc_len,has_reverse,n_cand",n_cand,0.9280485182468807,0.008654163876118242
+9,"heading_diff,dist_minus_min,rank,nbr_dist,tproj,speed,dist,arc_len,has_reverse",has_reverse,0.9289927025313254,0.008723339439638773
+8,"heading_diff,dist_minus_min,rank,nbr_dist,tproj,speed,dist,arc_len",arc_len,0.9263105100617084,0.010021592867954373
+7,"heading_diff,dist_minus_min,rank,nbr_dist,tproj,speed,dist",dist,0.9248550809002014,0.010565721407743721
+6,"heading_diff,dist_minus_min,rank,nbr_dist,tproj,speed",speed,0.924214638707225,0.010584442245296895
+5,"heading_diff,dist_minus_min,rank,nbr_dist,tproj",tproj,0.9230258825077525,0.010927695200072043
+4,"heading_diff,dist_minus_min,rank,nbr_dist",nbr_dist,0.913686570106068,0.010944433043552132
+3,"heading_diff,dist_minus_min,rank",rank,0.9062430493741633,0.011686291693761293

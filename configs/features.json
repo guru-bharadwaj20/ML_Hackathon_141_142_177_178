@@ -1,0 +1,26 @@
+{
+  "selected_features": [
+    "heading_diff",
+    "dist_minus_min",
+    "rank",
+    "nbr_dist",
+    "tproj",
+    "speed",
+    "dist",
+    "arc_len",
+    "has_reverse"
+  ],
+  "all_features": [
+    "dist",
+    "rank",
+    "dist_minus_min",
+    "heading_diff",
+    "speed",
+    "arc_len",
+    "tproj",
+    "n_cand",
+    "nbr_dist",
+    "has_reverse",
+    "fallback"
+  ]
+}
