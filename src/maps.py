@@ -25,7 +25,7 @@ def _legend(m, items):
 def trip_map(track, nodes_lonlat, arcs, network_arc_ids=None, reference_arc_ids=None,
              predicted=None, title=None, max_gps=3000):
     lat, lon = track[:, 1], track[:, 0]
-    m = folium.Map(tiles="cartodbpositron", control_scale=True)
+    m = folium.Map(tiles="OpenStreetMap", control_scale=True)
     m.fit_bounds([[lat.min(), lon.min()], [lat.max(), lon.max()]])
     legend = []
 

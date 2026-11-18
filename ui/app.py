@@ -22,7 +22,7 @@ def get_trips():
 def make_map(res):
     gps = res["gps"]
     lat, lon = [p[0] for p in gps], [p[1] for p in gps]
-    m = folium.Map(tiles="cartodbpositron", control_scale=True)
+    m = folium.Map(tiles="OpenStreetMap", control_scale=True)
     m.fit_bounds([[min(lat), min(lon)], [max(lat), max(lon)]])
     fg = folium.FeatureGroup(name="Road network (near track)")
     for ln in res["road_network"]:
