@@ -17,6 +17,8 @@ Phase 1 (preprocessing, features, seven classifiers, model choice) is written up
 | `results/` | Every table and plot quoted below |
 | `maps/` | Folium maps of the student-test trips |
 | `report/` | Technical report PDF, the script that builds it from `results/`, and its screenshots |
+| `demo/` | One-click start scripts for both laptops (Mac `.command`, Windows `.bat`) and the demo guide |
+| `presentation/` | Evaluation slides, UI screenshots and the presenter split |
 
 Raw data goes in `data/raw/train`, `data/raw/student_test` and `data/raw/evaluator_test`. It is not in git.
 
@@ -77,6 +79,8 @@ Continuity is the share of consecutive point pairs (at most 10 s apart) that sit
 - Features, hyperparameters, the model and beta were all chosen on train trips (and checked on student test). The evaluator trips were not used for any choice.
 
 ## Evaluator demo on two laptops
+
+Shortcut: double-click `demo/start_api.command` (Mac) or `demo/start_api.bat` (Windows) on laptop 1, then `demo/start_ui.command` or `demo/start_ui.bat` on laptop 2 and type laptop 1's IP. The full guide, with fixes and likely questions, is in [demo/DEMO.md](demo/DEMO.md).
 
 Both laptops need this repository and `pip install -r requirements.txt`, and both must be on the same network.
 
