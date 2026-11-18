@@ -86,6 +86,8 @@ Laptop 1 runs the API. Put the evaluator trips in `data/raw/evaluator_test` (one
 python -m uvicorn api.main:app --host 0.0.0.0 --port 8000
 ```
 
+On a Mac use `python3` and find the address with `ipconfig getifaddr en0`.
+
 The console prints one log line per request: points, candidate rows, time per stage, chain breaks and the Top-1 accuracy of the HMM and of the classifier alone. The same lines go to `logs/api.log`. Find this laptop's address with `ipconfig` (the IPv4 address), and allow Python through the Windows firewall if asked.
 
 Laptop 2 runs the interface:
@@ -94,6 +96,10 @@ Laptop 2 runs the interface:
 $env:PATHSNAP_API_URL = "http://<laptop-1-ip>:8000"
 python -m streamlit run ui\app.py
 ```
+
+On a Mac: `export PATHSNAP_API_URL=http://<laptop-1-ip>:8000` then `python3 -m streamlit run ui/app.py`.
+
+Before the demo, open `http://<laptop-1-ip>:8000/health` in laptop 2's browser. If it doesn't load, the two laptops can't see each other: check the network (a phone hotspot is the safest) and the firewall.
 
 Pick one of the 10 trips and press "Run map matching". The page shows the accuracy tiles and a map with the nearby road network, the GPS points, the predicted route and (as a layer you can switch on) the classifier-only route.
 

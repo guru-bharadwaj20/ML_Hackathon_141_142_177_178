@@ -5,3 +5,5 @@ models/*.joblib
 logs/
 __pycache__/
 *.pyc
+.DS_Store
+.venv/
