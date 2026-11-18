@@ -77,6 +77,9 @@ Pick one of the 10 trips and press "Run map matching". The page shows the accura
 
 API endpoints: `GET /health`, `GET /trips`, `POST /predict` with body `{"trip_id": "00000015"}`. To serve another folder of trips, set `PATHSNAP_EVAL_DIR` on laptop 1 before starting the API.
 
+##Observation 
+"As seen in the reports , trip 30 showed the HMM improving the accuracy by 6% . Trip 87 showed very similar accuracy even after HMM ."
+
 ## Leakage rules
 
 - The prediction pipeline ([src/pipeline.py](src/pipeline.py)) loads trips with `with_route=False`, so the model never sees the route file.
