@@ -85,3 +85,6 @@ Observation  :
 - The prediction pipeline ([src/pipeline.py](src/pipeline.py)) loads trips with `with_route=False`, so the model never sees the route file.
 - Accuracy is computed in [src/scoring.py](src/scoring.py) after prediction, on the API server only. The API response carries metrics but no reference geometry.
 - Features, hyperparameters, the model and beta were chosen on train trips. The evaluator trips were not used for any choice.
+
+  Hyperparamter Tunings used :
+   Grid Search for candidate radius (20–100 m) and K (2–15), with the final configuration of R = 50 m, K = 8 and fallback radius = 200 m. Random Forest feature importance and backward feature elimination (11 to 9 features). Model tuning included 5-fold GroupKFold cross-validation, with parameters such as KNN neighbours = 25, Random Forest estimators = 200, Decision Tree max depth = 10, and Gradient Boosting learning rate = 0.1 and max iterations = 300. MLP used hidden layers (64, 32), ReLU activation and Adam optimiser.
