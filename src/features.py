@@ -1,18 +1,4 @@
-"""Feature engineering: one row per (GPS point, candidate arc) pair.
-
-Features (all computed from GPS + road network only, never from the route):
-  dist            distance point -> arc (m)
-  rank            0 = nearest candidate of this point
-  dist_minus_min  dist - distance of nearest candidate (how much worse than the best)
-  heading_diff    angle between direction of travel and arc direction (deg, 0..180)
-  speed           GPS speed (m/s) from neighbouring points
-  arc_len         arc length (m)
-  tproj           where the perpendicular foot falls on the arc (0 = start, 1 = end)
-  n_cand          number of candidates for this point
-  nbr_dist        mean distance of the 2 previous and 2 next GPS points to this arc
-  has_reverse     1 if the opposite-direction arc exists (two-way road)
-  fallback        1 if the candidate came from the widened fallback radius
-"""
+"""Feature engineering: one row per (GPS point, candidate arc) pair."""
 import numpy as np
 import pandas as pd
 
@@ -20,10 +6,11 @@ from .geo import point_segment, angle_diff_deg, bearing_deg
 
 FEATURES = ["dist", "rank", "dist_minus_min", "heading_diff", "speed", "arc_len", "tproj",
             "n_cand", "nbr_dist", "has_reverse", "fallback"]
+EXTRA_FEATURES = ["heading_diff_long", "disp_long"]
+LONG_W = 10
 
 
 def motion(xy, t, w=2):
-    """Heading (deg) and speed (m/s) using points t-w .. t+w (clipped at the ends)."""
     n = len(xy)
     i0 = np.clip(np.arange(n) - w, 0, n - 1)
     i1 = np.clip(np.arange(n) + w, 0, n - 1)
@@ -32,6 +19,14 @@ def motion(xy, t, w=2):
     speed = np.hypot(dx, dy) / dtime
     heading = bearing_deg(dx, dy)
     return heading, speed
+
+
+def long_motion(xy, w=LONG_W):
+    n = len(xy)
+    i0 = np.clip(np.arange(n) - w, 0, n - 1)
+    i1 = np.clip(np.arange(n) + w, 0, n - 1)
+    d = xy[i1] - xy[i0]
+    return bearing_deg(d[:, 0], d[:, 1]), np.hypot(d[:, 0], d[:, 1])
 
 
 def reverse_flags(arcs):
@@ -59,4 +54,7 @@ def build_features(xy, t, cand, index, has_rev):
         d, _ = point_segment(xy[q, 0], xy[q, 1], index.A[arc, 0], index.A[arc, 1], index.B[arc, 0], index.B[arc, 1])
         acc += d
     df["nbr_dist"] = acc / 4.0
+    h_long, disp_long = long_motion(xy)
+    df["heading_diff_long"] = angle_diff_deg(h_long[pt], index.bearing[arc])
+    df["disp_long"] = disp_long[pt]
     return df

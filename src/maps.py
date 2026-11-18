@@ -8,7 +8,6 @@ COLORS = {"gps": "#1f77b4", "network": "#9e9e9e", "reference": "#2ca02c",
 
 
 def _arc_lines(nodes_lonlat, arcs, arc_ids):
-    """List of [[lat,lon],[lat,lon]] for each arc id (folium uses lat,lon order)."""
     a = arcs[np.asarray(arc_ids, dtype=int)]
     p, q = nodes_lonlat[a[:, 0]], nodes_lonlat[a[:, 1]]
     return [[[p[i, 1], p[i, 0]], [q[i, 1], q[i, 0]]] for i in range(len(a))]
@@ -25,10 +24,6 @@ def _legend(m, items):
 
 def trip_map(track, nodes_lonlat, arcs, network_arc_ids=None, reference_arc_ids=None,
              predicted=None, title=None, max_gps=3000):
-    """Build a map.
-
-    track: (N,3) lon,lat,t.  predicted: dict name -> list of arc ids (e.g. {'HMM': [...]}).
-    """
     lat, lon = track[:, 1], track[:, 0]
     m = folium.Map(tiles="cartodbpositron", control_scale=True)
     m.fit_bounds([[lat.min(), lon.min()], [lat.max(), lon.max()]])

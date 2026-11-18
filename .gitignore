@@ -1,6 +1,7 @@
 data/
 models/*.joblib
 !models/stage3_GradientBoosting.joblib
+!models/final_hgb.joblib
 logs/
 __pycache__/
 *.pyc

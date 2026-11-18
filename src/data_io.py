@@ -4,7 +4,6 @@ import numpy as np
 
 
 def list_trips(partition_dir):
-    """Return sorted trip ids (folder names) inside a partition folder."""
     p = Path(partition_dir)
     if not p.exists():
         return []
@@ -22,15 +21,6 @@ def _read(path, dtype, ncols):
 
 
 def load_trip(partition_dir, trip_id, with_route=True):
-    """Load one trip.
-
-    Returns dict with:
-      track : (N,3) float  lon, lat, t
-      nodes : (V,2) float  lon, lat    (row index = node id)
-      arcs  : (E,2) int    from, to    (row index = arc id)
-      route : (M,)  int    reference arc ids, or None
-    with_route=False never touches the .route file (used by the prediction pipeline).
-    """
     d = Path(partition_dir) / trip_id
     out = {
         "trip_id": trip_id,

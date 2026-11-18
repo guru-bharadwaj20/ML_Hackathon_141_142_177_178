@@ -1,12 +1,4 @@
-"""Stage 2: preprocessing, candidate generation, label derivation and feature extraction.
-
-Partitions: train (80) and student_test (9 usable; 00000000 has no .arcs file).
-Outputs:
-  data/features/train.pkl, data/features/student_test.pkl   (one row per point-candidate pair)
-  data/features/points_<partition>.pkl                        (one row per GPS point: reference arc, dist)
-  results/stage2/candidate_radius_k_grid.csv                  (justifies radius / K on TRAIN only)
-  results/stage2/preprocessing_summary.csv
-"""
+"""Stage 2: preprocessing, candidate generation, label derivation and feature extraction."""
 import sys, time
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
@@ -22,7 +14,6 @@ OUT.mkdir(parents=True, exist_ok=True)
 
 
 def radius_k_grid():
-    """Candidate miss rate for several radius/K settings (train partition only)."""
     recs = []
     for tid in list_trips(C.TRAIN_DIR):
         T = load_trip(C.TRAIN_DIR, tid)
@@ -79,7 +70,8 @@ def build(partition, pdir):
 
 
 if __name__ == "__main__":
-    radius_k_grid()
+    if "--skip-grid" not in sys.argv:
+        radius_k_grid()
     s = pd.concat([build("train", C.TRAIN_DIR), build("student_test", C.STUDENT_TEST_DIR)])
     s.to_csv(OUT / "preprocessing_summary.csv", index=False)
     print(s.groupby("partition")[["points", "rows", "no_candidate_points", "fallback_points",

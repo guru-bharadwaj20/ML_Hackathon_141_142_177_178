@@ -1,8 +1,4 @@
-"""Print the Phase 1 answers (preprocessing, k values, feature selection, models, choice) from the saved results.
-
-Run after s2_features.py and s3_models.py:  python scripts/show_phase1.py
-It only reads results/ and configs/, so it takes about a second.
-"""
+"""Print the Phase 1 answers (preprocessing, k values, feature selection, models, choice) from the saved results."""
 import sys, json
 from pathlib import Path
 

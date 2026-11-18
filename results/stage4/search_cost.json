@@ -1,0 +1,9 @@
+{
+  "n_trials": 50,
+  "completed": 50,
+  "pruned": 0,
+  "search_seconds": 1109.1150586605072,
+  "mean_seconds_per_completed_trial": 22.17400916099548,
+  "folds_per_trial": 5,
+  "train_rows": 369705
+}

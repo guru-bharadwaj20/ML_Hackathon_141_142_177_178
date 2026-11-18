@@ -1,9 +1,4 @@
-"""Coordinate handling.
-
-Longitude/latitude are angles, so Euclidean distance in degrees is not a distance in metres.
-Each trip covers only a city-sized area, so we use a local equirectangular projection centred on
-the trip: x = R*dlon*cos(lat0), y = R*dlat (radians). Over ~20 km the error is far below GPS noise.
-"""
+"""Coordinate handling."""
 import numpy as np
 
 EARTH_R = 6371008.8
@@ -27,11 +22,6 @@ class LocalProjection:
 
 
 def point_segment(px, py, ax, ay, bx, by):
-    """Vectorised distance from points P to segments AB.
-
-    Returns (distance, t) where t in [0,1] is the position of the closest point along AB.
-    All inputs are broadcastable arrays (metres).
-    """
     dx, dy = bx - ax, by - ay
     L2 = dx * dx + dy * dy
     with np.errstate(invalid="ignore", divide="ignore"):
@@ -42,11 +32,9 @@ def point_segment(px, py, ax, ay, bx, by):
 
 
 def angle_diff_deg(a, b):
-    """Absolute difference between two bearings (degrees), in [0,180]."""
     d = np.abs((a - b + 180.0) % 360.0 - 180.0)
     return d
 
 
 def bearing_deg(dx, dy):
-    """Bearing of vector (dx,dy) measured from the x (east) axis, degrees in [0,360)."""
     return np.degrees(np.arctan2(dy, dx)) % 360.0

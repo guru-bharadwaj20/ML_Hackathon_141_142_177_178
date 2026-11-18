@@ -1,8 +1,4 @@
-"""Per-trip preprocessing shared by training, evaluation and the API.
-
-prepare_trip(trip)  -> projection, arc index, candidate/feature table   (no route used)
-attach_labels(...)  -> adds reference arc per point and y per candidate (route used; train/eval only)
-"""
+"""Per-trip preprocessing shared by training, evaluation and the API."""
 import numpy as np
 
 from .geo import LocalProjection
@@ -13,7 +9,6 @@ from . import config as C
 
 
 def clean_track(track):
-    """Drop rows with non-finite or impossible coordinates and non-increasing timestamps."""
     ok = np.isfinite(track).all(1) & (np.abs(track[:, 0]) <= 180) & (np.abs(track[:, 1]) <= 90)
     track = track[ok]
     keep = np.r_[True, np.diff(track[:, 2]) > 0]
@@ -34,7 +29,6 @@ def prepare_trip(trip, radius=C.CAND_RADIUS_M, k=C.CAND_K):
 
 
 def attach_labels(prep, route):
-    """Reference arc per GPS point via monotone alignment to the route; y=1 for the matching candidate."""
     idx = prep["index"]
     k, dist = align_route(prep["xy"], idx.A[route], idx.B[route])
     ref_arc = route[k]

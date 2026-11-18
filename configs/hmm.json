@@ -1,0 +1,13 @@
+{
+  "beta_m": 5.0,
+  "emission": "log P(candidate is the true arc) from the final classifier",
+  "transition": "-|route distance - GPS distance| / beta",
+  "back_tolerance_m": 15.0,
+  "max_gap_s": 120.0,
+  "cutoff_m": [
+    250.0,
+    "2*gps_dist+100",
+    5000.0
+  ],
+  "chosen_by": "best Top-1 on out-of-fold train probabilities (points within 50 m of the route)"
+}

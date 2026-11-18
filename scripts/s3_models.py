@@ -1,10 +1,4 @@
-"""Stage 3: feature selection + training/comparison of 7 models from different families.
-
-Training/CV : 80 train trips, GroupKFold(5) by trip (no trip in both train and validation folds).
-Comparison  : 9 usable student_test trips (00000000 has no .arcs file).
-Task        : binary classification of each (GPS point, candidate arc) row: is this the reference arc?
-Outputs     : results/stage3/*.csv, results/plots/s3_*.png, models/stage3_<model>.joblib
-"""
+"""Stage 3: feature selection + training/comparison of 7 models from different families."""
 import sys, time, json
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
@@ -36,9 +30,9 @@ rng = np.random.RandomState(C.SEED)
 
 def load_train():
     F = pd.read_pickle(C.FEATURES_DIR / "train.pkl")
-    F = F[F["ref_dist"] <= C.CAND_RADIUS_M]                    # drop unreliable labels (off-network GPS)
+    F = F[F["ref_dist"] <= C.CAND_RADIUS_M]
     keep = []
-    for tid, g in F.groupby("trip_id"):                         # cap points per trip (uniform stride)
+    for tid, g in F.groupby("trip_id"):
         pts = np.unique(g["pt"].to_numpy())
         step = max(1, int(np.ceil(len(pts) / C.MAX_POINTS_PER_TRIP)))
         keep.append(g[g["pt"].isin(pts[::step])])
@@ -68,12 +62,6 @@ def models():
 
 
 def top1_and_continuity(df, prob, points, arcs_by_trip):
-    """Observation-level Top-1 accuracy and route continuity of the argmax predictions.
-
-    Top-1 is over ALL GPS points of the partition (points without candidates count as wrong).
-    Continuity: share of consecutive point pairs (gap <= 10 s) whose predicted arcs are the same arc
-    or directly connected (to_node of first == from_node of second).
-    """
     d = df[["trip_id", "pt", "arc"]].copy()
     d["p"] = prob
     best = d.loc[d.groupby(["trip_id", "pt"])["p"].idxmax()]
@@ -101,7 +89,6 @@ def scores(y, p):
 
 
 def feature_selection(X, y, groups):
-    """Information-gain (entropy) importance from a Random Forest, then backward elimination by CV Macro F1."""
     rf = RandomForestClassifier(n_estimators=200, min_samples_leaf=5, criterion="entropy", n_jobs=-1, random_state=C.SEED)
     rf.fit(X[FEATURES], y)
     imp = pd.Series(rf.feature_importances_, index=FEATURES).sort_values(ascending=False)

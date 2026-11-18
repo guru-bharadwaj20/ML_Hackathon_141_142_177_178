@@ -1,0 +1,27 @@
+{
+  "model": "HistGradientBoostingClassifier",
+  "chosen": "11 features, tuned (Optuna best)",
+  "chosen_by": "highest CV macro F1 on train trips",
+  "features": [
+    "heading_diff",
+    "dist_minus_min",
+    "rank",
+    "nbr_dist",
+    "tproj",
+    "speed",
+    "dist",
+    "arc_len",
+    "has_reverse",
+    "heading_diff_long",
+    "disp_long"
+  ],
+  "params": {
+    "learning_rate": 0.022372191999559105,
+    "max_iter": 279,
+    "max_leaf_nodes": 120,
+    "min_samples_leaf": 193,
+    "l2_regularization": 0.015338469691042122,
+    "max_features": 0.8230127503752016
+  },
+  "file": "final_hgb.joblib"
+}
